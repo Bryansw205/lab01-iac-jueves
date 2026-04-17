@@ -24,4 +24,33 @@ cd iac
 
 terraform init
 
-Para este 
+Aqui tenemos 2 "workspace" o mesas de trabajo y una opcional, son localhost, dev y default(opcional). 
+Para crear uno de estas mesas utilizamos el siguiente comando:
+
+terraform workspace new "nombre-mesa"
+
+Luego para seleccionar seria:
+
+terraform workspace select "nombre-mesa"
+
+Estos workspace nos permite manejar los puertos en donde se estan ejecutando cada uno de nuestras capas, se encuentra dentro del archivo:
+
+terraform.tfvars
+
+web_port={
+    default = 3001
+    localhost = 4001
+    dev = 5001
+}
+
+api_port={
+    default = 3002
+    localhost = 4002
+    dev = 5002
+}
+
+bd_port={
+    default = 3003
+    localhost = 4003
+    dev = 5003
+}
