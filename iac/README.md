@@ -54,3 +54,27 @@ bd_port={
     localhost = 4003
     dev = 5003
 }
+
+Tambien para este caso se uso una red de docker la cual fue configurada en el archivo:
+
+red.tf
+
+resource "docker_network" "app_network" {
+  name = "app-network-${terraform.workspace}"
+}
+
+Permite abrir una red segun la mesa que estemos usando, esta tambien tenemos que agregar en cada uno de los archivos de las capas que tengamos, web, api y bd.
+
+Luego para ejecutar todo procederiamos en este orden:
+
+cd iac
+
+terraform init
+
+terraform workspace select dev
+
+terraform plan
+
+terraform apply
+
+Confirmamos con Yes
