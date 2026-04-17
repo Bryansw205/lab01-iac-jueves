@@ -3,7 +3,7 @@ resource "docker_container" "api" {
   image = "lab/api"
 
    ports {
-    internal = "80"
+    internal = "3000"
     external = var.api_port[terraform.workspace]
   }
 }
