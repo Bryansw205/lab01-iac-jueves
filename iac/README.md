@@ -78,3 +78,7 @@ terraform plan
 terraform apply
 
 Confirmamos con Yes
+
+Por ejemplo ya tendriamos nuestras capas desplegadas con terraform y para verificar la red usamos 
+
+docker network inspect app-network-dev
