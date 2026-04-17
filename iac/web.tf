@@ -4,6 +4,6 @@ resource "docker_container" "web" {
 
    ports {
     internal = "80"
-    external = "var.web_port"
+    external = var.web_port[terraform.workspace]
   }
 }
